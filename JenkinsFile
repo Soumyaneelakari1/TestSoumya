@@ -44,7 +44,7 @@ pipeline {
                             steps {
                                 echo "Running unit tests..."
                                 bat """cd ${WORKSPACE}\\TestSoumya
-                                                    mvn clean verify sonar:sonar "-Dsonar.host.url=http://localhost:9000" "-Dsonar.login=squ_c501a7160e073ab1388f714b3c5af0681f16eb4c""""
+                                                    mvn clean verify sonar:sonar \"-Dsonar.host.url=http://localhost:9000\" \"-Dsonar.login=squ_c501a7160e073ab1388f714b3c5af0681f16eb4c\""""
                             }
                         }
 
