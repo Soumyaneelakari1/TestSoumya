@@ -1,7 +1,7 @@
 package com.example.TestSoumya;
 
-import com.example.TestSoumya.Controller.UserController;
-import com.example.TestSoumya.entity.UserEntity;
+import com.example.TestSoumya.ControllerSoumya.UserController;
+import com.example.TestSoumya.entitySoumya.UserEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,7 +38,7 @@ public class TestSoumyaApplicationTests {
 		user.setEmail("bob@example.com");
 		user.setPhoneno("0987654321");
 
-		// Save user and get the saved entity (with generated ID)
+		// Save user and get the saved entitySoumya (with generated ID)
 		UserEntity savedUser = userController.add(user).getBody();
 
 		// Now fetch by the generated ID

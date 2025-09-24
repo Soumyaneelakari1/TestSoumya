@@ -1,4 +1,4 @@
-package com.example.TestSoumya.entity;
+package com.example.TestSoumya.entitySoumya;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

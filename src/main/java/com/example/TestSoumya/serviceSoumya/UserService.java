@@ -1,7 +1,7 @@
-package com.example.TestSoumya.service;
+package com.example.TestSoumya.serviceSoumya;
 
-import com.example.TestSoumya.entity.UserEntity;
-import com.example.TestSoumya.repository.UserRepository;
+import com.example.TestSoumya.entitySoumya.UserEntity;
+import com.example.TestSoumya.repositorySoumya.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

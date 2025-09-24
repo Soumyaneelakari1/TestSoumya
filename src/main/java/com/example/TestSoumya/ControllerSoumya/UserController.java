@@ -1,7 +1,7 @@
-package com.example.TestSoumya.Controller;
+package com.example.TestSoumya.ControllerSoumya;
 
-import com.example.TestSoumya.entity.UserEntity;
-import com.example.TestSoumya.service.UserService;
+import com.example.TestSoumya.entitySoumya.UserEntity;
+import com.example.TestSoumya.serviceSoumya.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
-package com.example.TestSoumya.repository;
+package com.example.TestSoumya.repositorySoumya;
 
-import com.example.TestSoumya.entity.UserEntity;
+import com.example.TestSoumya.entitySoumya.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
