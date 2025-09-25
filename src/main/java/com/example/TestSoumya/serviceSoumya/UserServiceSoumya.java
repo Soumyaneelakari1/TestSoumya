@@ -1,23 +1,23 @@
 package com.example.TestSoumya.serviceSoumya;
 
 import com.example.TestSoumya.entitySoumya.UserEntitySoumya;
-import com.example.TestSoumya.repositorySoumya.UserRepository;
+import com.example.TestSoumya.repositorySoumya.UserRepositorySoumya;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 @Service
-public class UserService {
+public class UserServiceSoumya {
     @Autowired
-    public UserRepository userRepository;
+    public UserRepositorySoumya userRepositorySoumya;
 
     public UserEntitySoumya addUser(UserEntitySoumya userEntitySoumya)
     {
-        return userRepository.save(userEntitySoumya);
+        return userRepositorySoumya.save(userEntitySoumya);
     }
 
     public Optional<UserEntitySoumya> fetchUser(Integer id)
     {
-        return userRepository.findById(id);
+        return userRepositorySoumya.findById(id);
     }
 }

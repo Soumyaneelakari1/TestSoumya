@@ -1,7 +1,7 @@
 package com.example.TestSoumya.ControllerSoumya;
 
 import com.example.TestSoumya.entitySoumya.UserEntitySoumya;
-import com.example.TestSoumya.serviceSoumya.UserService;
+import com.example.TestSoumya.serviceSoumya.UserServiceSoumya;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class UserControllerSoumya {
 
 
     @Autowired
-    public UserService userService;
+    public UserServiceSoumya userServiceSoumya;
 
     @PostMapping("/adduser")
     public ResponseEntity<UserEntitySoumya> add(@RequestBody UserEntitySoumya userEntitySoumya)
@@ -25,14 +25,14 @@ public class UserControllerSoumya {
         System.out.println(userEntitySoumya.getEmail());
         logger.info("Received request to add user with email: {}", userEntitySoumya.getEmail());
 
-        return ResponseEntity.ok(userService.addUser(userEntitySoumya));
+        return ResponseEntity.ok(userServiceSoumya.addUser(userEntitySoumya));
     }
 
     @GetMapping("/getuser/{id}")
     public Optional<UserEntitySoumya> findbyId(@PathVariable Integer id)
     {
         logger.info("Fetching user with ID: {}", id);
-        return userService.fetchUser(id);
+        return userServiceSoumya.fetchUser(id);
     }
 
 
