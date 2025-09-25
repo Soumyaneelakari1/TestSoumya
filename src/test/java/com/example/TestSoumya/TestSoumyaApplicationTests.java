@@ -1,7 +1,7 @@
 package com.example.TestSoumya;
 
-import com.example.TestSoumya.ControllerSoumya.UserController;
-import com.example.TestSoumya.entitySoumya.UserEntity;
+import com.example.TestSoumya.ControllerSoumya.UserControllerSoumya;
+import com.example.TestSoumya.entitySoumya.UserEntitySoumya;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,11 +14,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestSoumyaApplicationTests {
 
 	@Autowired
-	private UserController userController;
+	private UserControllerSoumya userController;
 
 	@Test
 	void testAddUser() {
-		UserEntity user = new UserEntity();
+		UserEntitySoumya user = new UserEntitySoumya();
 //		user.setUserid(10);
 		user.setUsername("Alice");
 		user.setEmail("alice@example.com");
@@ -33,16 +33,16 @@ public class TestSoumyaApplicationTests {
 	@Test
 	void testFindById() {
 		// Create user without setting ID (let DB generate it)
-		UserEntity user = new UserEntity();
+		UserEntitySoumya user = new UserEntitySoumya();
 		user.setUsername("Bob");
 		user.setEmail("bob@example.com");
 		user.setPhoneno("0987654321");
 
 		// Save user and get the saved entitySoumya (with generated ID)
-		UserEntity savedUser = userController.add(user).getBody();
+		UserEntitySoumya savedUser = userController.add(user).getBody();
 
 		// Now fetch by the generated ID
-		Optional<UserEntity> fetchedUser = userController.findbyId(savedUser.getUserid());
+		Optional<UserEntitySoumya> fetchedUser = userController.findbyId(savedUser.getUserid());
 
 		assertTrue(fetchedUser.isPresent());
 		assertEquals("Bob", fetchedUser.get().getUsername());

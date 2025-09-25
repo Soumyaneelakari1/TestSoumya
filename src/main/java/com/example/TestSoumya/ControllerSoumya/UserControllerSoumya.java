@@ -1,6 +1,6 @@
 package com.example.TestSoumya.ControllerSoumya;
 
-import com.example.TestSoumya.entitySoumya.UserEntity;
+import com.example.TestSoumya.entitySoumya.UserEntitySoumya;
 import com.example.TestSoumya.serviceSoumya.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,24 +12,24 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/user")
-public class UserController {
-    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+public class UserControllerSoumya {
+    private static final Logger logger = LoggerFactory.getLogger(UserControllerSoumya.class);
 
 
     @Autowired
     public UserService userService;
 
     @PostMapping("/adduser")
-    public ResponseEntity<UserEntity> add(@RequestBody UserEntity userEntity)
+    public ResponseEntity<UserEntitySoumya> add(@RequestBody UserEntitySoumya userEntitySoumya)
     {
-        System.out.println(userEntity.getEmail());
-        logger.info("Received request to add user with email: {}", userEntity.getEmail());
+        System.out.println(userEntitySoumya.getEmail());
+        logger.info("Received request to add user with email: {}", userEntitySoumya.getEmail());
 
-        return ResponseEntity.ok(userService.addUser(userEntity));
+        return ResponseEntity.ok(userService.addUser(userEntitySoumya));
     }
 
     @GetMapping("/getuser/{id}")
-    public Optional<UserEntity> findbyId(@PathVariable Integer id)
+    public Optional<UserEntitySoumya> findbyId(@PathVariable Integer id)
     {
         logger.info("Fetching user with ID: {}", id);
         return userService.fetchUser(id);

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+public class UserEntitySoumya {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userid;
